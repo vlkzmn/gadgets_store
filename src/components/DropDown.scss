@@ -1,0 +1,86 @@
+@import "../styles/variables.scss";
+
+.drop-down {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &__title {
+    font-size: 12px;
+    font-weight: 600;
+    color: $gray-secondary;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 176px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    color: $gray-primary;
+    border: 1px solid $gray-icons;
+    cursor: pointer;
+    transition: color $transition-time;
+
+    &::after {
+      display: inline-block;
+      content: "";
+      background-image: url(../img/icons/arrow-down.svg);
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      border-color: $gray-secondary;
+    }
+
+    &--active {
+      border-color: $gray-primary;
+
+      &:hover {
+        border-color: $gray-primary;
+      }
+
+      &::after {
+        display: inline-block;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: url(../img/icons/arrow-up.svg);
+      }
+    }
+  }
+
+  &__list {
+    box-sizing: border-box;
+    position: absolute;
+    top: 70px;
+    width: 176px;
+    padding: 0 12px;
+    background-color: #fff;
+    border: 1px solid $gray-icons;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__item-link {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 35px;
+    color: $gray-secondary;
+    cursor: pointer;
+    transition: color $transition-time;
+
+    &:hover {
+      color: $gray-primary;
+    }
+  }
+}
